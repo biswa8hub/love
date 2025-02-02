@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            background: url('https://www.example.com/romantic-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 70px;
+            color: #ff4081;
+            animation: fadeIn 3s ease-out;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 40px;
+            color: #ff4081;
+            margin-bottom: 30px;
+            animation: fadeInText 3s ease-out;
+        }
+
+        .message {
+            font-size: 22px;
+            color: #ff4081;
+            line-height: 1.6;
+            width: 80%;
+            margin: 0 auto 40px;
+            animation: fadeInText 4s ease-out;
+        }
+
+        .heart {
+            font-size: 120px;
+            color: #ff4081;
+            animation: heartBeat 1.5s infinite;
+            margin-bottom: 40px;
+        }
+
+        .countdown {
+            font-size: 30px;
+            margin: 20px 0;
+            color: #ffeb3b;
+            animation: fadeInText 5s ease-out;
+        }
+
+        .cta-btn {
+            background-color: #ff4081;
+            padding: 15px 40px;
+            font-size: 25px;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #e91e63;
+            transform: translateY(-5px);
+        }
+
+        .cta-btn:active {
+            transform: translateY(2px);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartBeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes moveStars {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Happy Birthday, My Love! 🎉</h1>
+    <h2>You Are My Everything! 💖</h2>
+
+    <div class="message">
+        <p>Today is a celebration of you, the most beautiful person in my life. I am so grateful for every moment we've shared and every smile you bring to my heart. You make my world complete, and I look forward to spending every day with you. Here's to another year of love, laughter, and dreams come true. ❤️</p>
+    </div>
+
+    <div class="heart">❤️</div>
+
+    <div class="countdown" id="countdown"></div>
+
+    <a href="https://www.example.com" class="cta-btn">I Love You More! ❤️</a>
+
+    <script>
+        // Replace this with your partner's actual birthday date
+        const birthday = new Date('2025-02-03T00:00:00');
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeDifference = birthday - now;
+
+            if (timeDifference <= 0) {
+                document.getElementById('countdown').innerHTML = "Happy Birthday, My Love! 🎂🎉";
+            } else {
+                const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+                document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m until your birthday!`;
+            }
+        }
+
+        setInterval(updateCountdown, 1000);  // Update every second
+        updateCountdown();  // Initial call to display the countdown immediately
+    </script>
+
+</body>
+</html>
